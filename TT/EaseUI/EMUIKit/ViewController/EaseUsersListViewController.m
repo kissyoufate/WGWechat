@@ -14,6 +14,7 @@
 
 #import "UIViewController+HUD.h"
 #import "EaseMessageViewController.h"
+#import "AddFriendViewController.h"
 
 @interface EaseUsersListViewController ()
 
@@ -62,7 +63,9 @@
 
 - (void)addAfriend
 {
-
+    AddFriendViewController *addVC = [[AddFriendViewController alloc] init];
+    addVC.title = @"添加朋友";
+    [self.navigationController pushViewController:addVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

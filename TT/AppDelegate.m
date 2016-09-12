@@ -45,10 +45,10 @@
 
     //初始化环信
     [[EaseSDKHelper shareHelper] hyphenateApplication:application
-                      didFinishLaunchingWithOptions:launchOptions
-                                             appkey:APPKEY
-                                       apnsCertName:nil
-                                        otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
+                        didFinishLaunchingWithOptions:launchOptions
+                                               appkey:APPKEY
+                                         apnsCertName:nil
+                                          otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
 
     [self initShareSDK];
     return YES;

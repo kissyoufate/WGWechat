@@ -13,7 +13,7 @@
 #import "MineViewController.h"
 #import "BaseNavViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController () <EMContactManagerDelegate>
 
 @end
 
@@ -31,6 +31,9 @@
     self.tabBar.tintColor = WGColor(0, 190, 12);
 
     [self setAllControllers];
+
+    //好友添加相关delegat
+    [[EMClient sharedClient].contactManager addDelegate:self];
 }
 
 - (void)setAllControllers
@@ -55,6 +58,41 @@
     }];
 
     self.viewControllers = mArray;
+}
+
+#pragma mark - EMContactManagerDelegate
+//收到好友添加 进行同意||拒绝的操作
+- (void)friendRequestDidReceiveFromUser:(NSString *)aUsername message:(NSString *)aMessage{
+    UIAlertController *avc = [UIAlertController alertControllerWithTitle:@"好友添加提示" message:[NSString
+                                                                                          stringWithFormat:@"%@ 想添加您为好友并说:%@",aUsername,aMessage] preferredStyle:
+                              UIAlertControllerStyleAlert];
+    UIAlertAction *at1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        EMError *error = [[EMClient sharedClient].contactManager acceptInvitationForUsername:aUsername];
+        if (!error) {
+            [MBProgressHUD showSuccess:@"已添加" toView:self.view];
+        }
+    }];
+    UIAlertAction *at2 = [UIAlertAction actionWithTitle:@"算了" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        EMError *error = [[EMClient sharedClient].contactManager declineInvitationForUsername:aUsername];
+        if (!error) {
+            [MBProgressHUD showSuccess:@"拒绝了对方的好友申请" toView:self.view];
+        }
+    }];
+    [avc addAction:at1];
+    [avc addAction:at2];
+    [self presentViewController:avc animated:YES completion:^{
+        
+    }];
+}
+
+//收到了同意添加
+- (void)friendRequestDidApproveByUser:(NSString *)aUsername{
+    [MBProgressHUD showSuccess:[NSString stringWithFormat:@"%@ 同意了您的好友申请",aUsername] toView:self.view];
+}
+
+//收到了拒绝添加
+- (void)friendRequestDidDeclineByUser:(NSString *)aUsername{
+    [MBProgressHUD showSuccess:[NSString stringWithFormat:@"%@ 拒绝了您的好友申请😀",aUsername] toView:self.view];
 }
 
 @end
