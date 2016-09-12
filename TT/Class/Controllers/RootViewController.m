@@ -13,7 +13,7 @@
 #import "MineViewController.h"
 #import "BaseNavViewController.h"
 
-@interface RootViewController () <EMContactManagerDelegate>
+@interface RootViewController () <EMContactManagerDelegate,EMChatManagerDelegate>
 
 @end
 
@@ -34,6 +34,10 @@
 
     //好友添加相关delegat
     [[EMClient sharedClient].contactManager addDelegate:self];
+    //收到消息的代理
+    [[EMClient sharedClient].chatManager addDelegate:self];
+    //主动调用获取未读的消息,添加角标
+    [self getUnreadMessageCount];
 }
 
 - (void)setAllControllers
@@ -60,7 +64,23 @@
     self.viewControllers = mArray;
 }
 
-#pragma mark - EMContactManagerDelegate
+#pragma mark - EMChatManagerDelegate 收到消息相关的bage提示
+- (void)messagesDidReceive:(NSArray *)aMessages{
+    [self getUnreadMessageCount];
+}
+
+- (void)getUnreadMessageCount{
+    NSArray *conver = [[EMClient sharedClient].chatManager getAllConversations];
+    NSInteger unread = 0;
+    for (EMConversation *con in conver) {
+        unread += con.unreadMessagesCount;
+    }
+
+    UITabBarItem *item = [self.tabBar.items objectAtIndex:0];
+    item.badgeValue = [NSString stringWithFormat:@"%ld",(long)unread];
+}
+
+#pragma mark - EMContactManagerDelegate  好友相关操作
 //收到好友添加 进行同意||拒绝的操作
 - (void)friendRequestDidReceiveFromUser:(NSString *)aUsername message:(NSString *)aMessage{
     UIAlertController *avc = [UIAlertController alertControllerWithTitle:@"好友添加提示" message:[NSString

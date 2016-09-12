@@ -35,6 +35,8 @@
 
     self.tabBarController.tabBar.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 49, [UIScreen mainScreen].bounds.size.width, 49);
     self.tabBarController.tabBar.hidden = NO;
+
+    [self.tabBarItem setBadgeValue:nil];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
