@@ -27,7 +27,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
 
     //自身的UI
-    [self.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
+    self.tabBar.barTintColor = [UIColor whiteColor];
     self.tabBar.tintColor = WGColor(0, 190, 12);
 
     [self setAllControllers];
@@ -40,8 +40,7 @@
     [self getUnreadMessageCount];
 }
 
-- (void)setAllControllers
-{
+- (void)setAllControllers{
     EaseConversationListViewController *converVC = [[EaseConversationListViewController alloc] init];
     EaseUsersListViewController *listVC = [[EaseUsersListViewController alloc] init];
     FoundViewController *fVC = [[FoundViewController alloc] init];

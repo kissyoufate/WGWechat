@@ -8,7 +8,10 @@
 
 #import "FoundViewController.h"
 
-@interface FoundViewController ()
+@interface FoundViewController () <UITableViewDataSource,UITableViewDelegate>
+{
+    UITableView *myTB;
+}
 
 @end
 
@@ -16,22 +19,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUI{
+    myTB = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kView_W, kView_H) style:UITableViewStyleGrouped];
+    myTB.delegate = self;
+    myTB.dataSource = self;
+    [self.view addSubview:myTB];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 10.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.001f;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellID = @"cellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    if (indexPath.section == 0) {
+        cell.textLabel.text = @"恬恬圈";
+    }else if (indexPath.section == 1){
+        cell.textLabel.text = @"火热资讯";
+    }
+    return cell;
+}
 
 @end
