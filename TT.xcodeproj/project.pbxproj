@@ -192,6 +192,13 @@
 		325CBB051D8290E200CC4416 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325CBB031D8290E200CC4416 /* RegistViewController.m */; };
 		325CBB061D8290E200CC4416 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CBB041D8290E200CC4416 /* RegistViewController.xib */; };
 		3267840C1D864D1E007197C5 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3267840B1D864D1E007197C5 /* AddFriendViewController.m */; };
+		32C991161D87CB8F00799ABC /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C991151D87CB8F00799ABC /* NewsViewController.m */; };
+		32C991191D87CC6500799ABC /* NewsCategaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C991181D87CC6500799ABC /* NewsCategaryViewController.m */; };
+		32C9911D1D87D2CD00799ABC /* NewsCategaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C9911B1D87D2CD00799ABC /* NewsCategaryCell.m */; };
+		32C9911E1D87D2CD00799ABC /* NewsCategaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C9911C1D87D2CD00799ABC /* NewsCategaryCell.xib */; };
+		32C991211D87D39600799ABC /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C991201D87D39600799ABC /* BaseModel.m */; };
+		32C991271D87D45200799ABC /* NewsCateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C991261D87D45200799ABC /* NewsCateModel.m */; };
+		32C9912A1D87DF9F00799ABC /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C991291D87DF9F00799ABC /* NewsDetailViewController.m */; };
 		4EE2861C82C9C024A213EDCA /* libPods-TT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4407BE62BAB125FFEF04FA04 /* libPods-TT.a */; };
 /* End PBXBuildFile section */
 
@@ -529,6 +536,19 @@
 		325CBB041D8290E200CC4416 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		3267840A1D864D1E007197C5 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		3267840B1D864D1E007197C5 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
+		32C991141D87CB8F00799ABC /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		32C991151D87CB8F00799ABC /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		32C991171D87CC6500799ABC /* NewsCategaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCategaryViewController.h; sourceTree = "<group>"; };
+		32C991181D87CC6500799ABC /* NewsCategaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCategaryViewController.m; sourceTree = "<group>"; };
+		32C9911A1D87D2CD00799ABC /* NewsCategaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCategaryCell.h; sourceTree = "<group>"; };
+		32C9911B1D87D2CD00799ABC /* NewsCategaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCategaryCell.m; sourceTree = "<group>"; };
+		32C9911C1D87D2CD00799ABC /* NewsCategaryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCategaryCell.xib; sourceTree = "<group>"; };
+		32C9911F1D87D39600799ABC /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		32C991201D87D39600799ABC /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		32C991251D87D45200799ABC /* NewsCateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCateModel.h; sourceTree = "<group>"; };
+		32C991261D87D45200799ABC /* NewsCateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCateModel.m; sourceTree = "<group>"; };
+		32C991281D87DF9F00799ABC /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		32C991291D87DF9F00799ABC /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		4407BE62BAB125FFEF04FA04 /* libPods-TT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5433F854D03B9DC8326121 /* Pods-TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TT/Pods-TT.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1323,6 +1343,8 @@
 		325CBAD41D826C9700CC4416 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				32C9911F1D87D39600799ABC /* BaseModel.h */,
+				32C991201D87D39600799ABC /* BaseModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1391,6 +1413,12 @@
 			children = (
 				325CBAF01D82859600CC4416 /* FoundViewController.h */,
 				325CBAF11D82859600CC4416 /* FoundViewController.m */,
+				32C991141D87CB8F00799ABC /* NewsViewController.h */,
+				32C991151D87CB8F00799ABC /* NewsViewController.m */,
+				32C991171D87CC6500799ABC /* NewsCategaryViewController.h */,
+				32C991181D87CC6500799ABC /* NewsCategaryViewController.m */,
+				32C991281D87DF9F00799ABC /* NewsDetailViewController.h */,
+				32C991291D87DF9F00799ABC /* NewsDetailViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1398,6 +1426,8 @@
 		325CBAEE1D82858B00CC4416 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				32C991251D87D45200799ABC /* NewsCateModel.h */,
+				32C991261D87D45200799ABC /* NewsCateModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1405,6 +1435,9 @@
 		325CBAEF1D82858B00CC4416 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				32C9911A1D87D2CD00799ABC /* NewsCategaryCell.h */,
+				32C9911B1D87D2CD00799ABC /* NewsCategaryCell.m */,
+				32C9911C1D87D2CD00799ABC /* NewsCategaryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1586,6 +1619,7 @@
 				325CBAC61D82697F00CC4416 /* pic6.jpg in Resources */,
 				325CBA9A1D82697F00CC4416 /* 10.jpg in Resources */,
 				325CBA9F1D82697F00CC4416 /* 15.jpg in Resources */,
+				32C9911E1D87D2CD00799ABC /* NewsCategaryCell.xib in Resources */,
 				325CBAA41D82697F00CC4416 /* 2.jpg in Resources */,
 				325CBAA81D82697F00CC4416 /* 23.jpg in Resources */,
 				325CBB011D828B1800CC4416 /* LoginViewController.xib in Resources */,
@@ -1685,11 +1719,13 @@
 				325CBA451D82681300CC4416 /* EaseViewController.m in Sources */,
 				325CBA491D82681300CC4416 /* EaseMessageCell.m in Sources */,
 				325CBAD81D826CB000CC4416 /* BaseNavViewController.m in Sources */,
+				32C991161D87CB8F00799ABC /* NewsViewController.m in Sources */,
 				325CBA161D82681300CC4416 /* EMSDWebImageManager.m in Sources */,
 				325CBA021D82681300CC4416 /* MJRefreshStateHeader.m in Sources */,
 				325CBA371D82681300CC4416 /* UIViewController+HUD.m in Sources */,
 				325CBA181D82681300CC4416 /* MKAnnotationView+EMWebCache.m in Sources */,
 				325CBA441D82681300CC4416 /* EaseUsersListViewController.m in Sources */,
+				32C991211D87D39600799ABC /* BaseModel.m in Sources */,
 				325CBA321D82681300CC4416 /* EaseUserModel.m in Sources */,
 				325CB9FF1D82681300CC4416 /* MJRefreshBackStateFooter.m in Sources */,
 				325CBA171D82681300CC4416 /* EMSDWebImagePrefetcher.m in Sources */,
@@ -1709,6 +1745,7 @@
 				325CBA221D82681300CC4416 /* PSTCollectionView.m in Sources */,
 				325CBA3D1D82681300CC4416 /* EaseEmotionEscape.m in Sources */,
 				325CBA301D82681300CC4416 /* EaseConversationModel.m in Sources */,
+				32C991271D87D45200799ABC /* NewsCateModel.m in Sources */,
 				325CBA201D82681300CC4416 /* UIView+EMWebCacheOperation.m in Sources */,
 				325CBA1B1D82681300CC4416 /* UIImage+EMGIF.m in Sources */,
 				325CB9FD1D82681300CC4416 /* MJRefreshBackGifFooter.m in Sources */,
@@ -1774,7 +1811,9 @@
 				325CBA5B1D82681300CC4416 /* EaseConversationCell.m in Sources */,
 				325CBA4E1D82681300CC4416 /* EaseBubbleView+Location.m in Sources */,
 				325CB9F71D82681300CC4416 /* MJRefreshComponent.m in Sources */,
+				32C9911D1D87D2CD00799ABC /* NewsCategaryCell.m in Sources */,
 				325CBA4C1D82681300CC4416 /* EaseBubbleView+Gif.m in Sources */,
+				32C991191D87CC6500799ABC /* NewsCategaryViewController.m in Sources */,
 				325CB8AD1D82609A00CC4416 /* main.m in Sources */,
 				325CBA001D82681300CC4416 /* MJRefreshGifHeader.m in Sources */,
 				325CBA541D82681300CC4416 /* EaseChatToolbarItem.m in Sources */,
@@ -1784,6 +1823,7 @@
 				325CBA1A1D82681300CC4416 /* UIButton+EMWebCache.m in Sources */,
 				325CBA051D82681300CC4416 /* UIScrollView+MJExtension.m in Sources */,
 				325CBA071D82681300CC4416 /* UIView+MJExtension.m in Sources */,
+				32C9912A1D87DF9F00799ABC /* NewsDetailViewController.m in Sources */,
 				325CBA361D82681300CC4416 /* UIViewController+DismissKeyboard.m in Sources */,
 				325CBA271D82681300CC4416 /* PSTCollectionViewItemKey.m in Sources */,
 				325CB9EE1D82681300CC4416 /* amrFileCodec.mm in Sources */,

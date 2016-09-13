@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "RegistViewController.h"
 #import "RootViewController.h"
+#import "NewsViewController.h"
+#import "BaseNavViewController.h"
 
 @interface LoginViewController ()
 
@@ -21,6 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+
+    if (![WeiboSDK isWeiboAppInstalled]) {
+        _WeiboLogin.hidden = YES;
+    }
+
+    if (![WXApi isWXAppInstalled]) {
+        _WeixinLogin.hidden = YES;
+    }
+
+    if (![QQApiInterface isQQInstalled]) {
+        _QQlogin.hidden = YES;
+    }
 }
 
 - (IBAction)login:(id)sender {
@@ -81,9 +97,20 @@
          {
              NSLog(@"%@",error);
          }
-         
+
      }];
 }
+
+#pragma mark - 随便看一下
+- (IBAction)justSeeSee:(id)sender {
+    NewsViewController *nVC = [[NewsViewController alloc] init];
+    nVC.title = @"随便看看";
+    BaseNavViewController *nav = [[BaseNavViewController alloc] initWithRootViewController:nVC];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    [UIApplication sharedApplication].keyWindow.rootViewController = nav;
+}
+
 
 
 @end

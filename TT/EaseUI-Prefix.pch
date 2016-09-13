@@ -22,6 +22,9 @@
 #import <UITableView+SDAutoTableViewCellHeight.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "MBProgressHUD+Add.h"
+#import <AFNetworking/AFNetworking.h>
+#import <MJExtension/MJExtension.h>
+#import "MJRefresh.h"
 
 
 //shareSDK

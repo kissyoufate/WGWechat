@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="QQlogin" destination="oaH-cn-eVK" id="wlk-Ms-iAY"/>
+                <outlet property="WeiboLogin" destination="0fj-Rr-5qZ" id="Mzm-5N-uRS"/>
+                <outlet property="WeixinLogin" destination="kcm-4R-DIO" id="tCT-Te-aaE"/>
                 <outlet property="account" destination="tke-o5-Akv" id="hHk-9t-xgy"/>
                 <outlet property="password" destination="2oR-v8-wnc" id="ztB-Iz-84Y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -123,13 +126,28 @@
                     <color key="textColor" red="0.64705882349999999" green="0.64705882349999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kG-px-jrh">
+                    <rect key="frame" x="50" y="488" width="220" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.82579265173026228" blue="0.71354233992932614" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="r0P-It-OwM"/>
+                    </constraints>
+                    <state key="normal" title="我就随便看一下好了">
+                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="justSeeSee:" destination="-1" eventType="touchUpInside" id="04W-yV-0cG"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="8ak-OK-UHs" firstAttribute="top" secondItem="2oR-v8-wnc" secondAttribute="bottom" id="0XL-hS-mWt"/>
+                <constraint firstAttribute="bottom" secondItem="7kG-px-jrh" secondAttribute="bottom" constant="50" id="0lq-ho-mWm"/>
                 <constraint firstItem="2oR-v8-wnc" firstAttribute="top" secondItem="PLM-3q-dla" secondAttribute="bottom" constant="15" id="3D7-Gm-s01"/>
                 <constraint firstItem="PLM-3q-dla" firstAttribute="top" secondItem="tke-o5-Akv" secondAttribute="bottom" id="3uz-g0-LgZ"/>
                 <constraint firstAttribute="trailing" secondItem="8ak-OK-UHs" secondAttribute="trailing" constant="50" id="4xY-Ie-aks"/>
+                <constraint firstAttribute="trailing" secondItem="7kG-px-jrh" secondAttribute="trailing" constant="50" id="594-sg-LUB"/>
                 <constraint firstItem="b3m-LU-Vpe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5K4-Ay-8dy"/>
                 <constraint firstItem="giy-5M-PPL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="81V-6r-rGY"/>
                 <constraint firstAttribute="trailing" secondItem="PLM-3q-dla" secondAttribute="trailing" constant="50" id="8G7-9I-7Vn"/>
@@ -156,6 +174,7 @@
                 <constraint firstAttribute="trailing" secondItem="b3m-LU-Vpe" secondAttribute="trailing" id="rb1-fn-dD4"/>
                 <constraint firstItem="b3m-LU-Vpe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tAf-8c-1jQ"/>
                 <constraint firstAttribute="trailing" secondItem="0fj-Rr-5qZ" secondAttribute="trailing" constant="50" id="ud8-aL-NpQ"/>
+                <constraint firstItem="7kG-px-jrh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="w8q-oq-EWe"/>
                 <constraint firstItem="0fj-Rr-5qZ" firstAttribute="top" secondItem="igI-X3-Oft" secondAttribute="bottom" constant="50" id="zdc-KY-fes"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

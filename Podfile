@@ -8,4 +8,7 @@ pod 'MOBFoundation'
 pod 'ShareSDK3/ShareSDKPlatforms/QQ'
 pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
 pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
+pod 'AFNetworking', '~> 3.1.0'
+pod 'MJExtension', '~> 3.0.13'
+pod 'YZDisplayViewController', '~> 1.0.6'
 end

@@ -7,6 +7,7 @@
 //
 
 #import "FoundViewController.h"
+#import "NewsViewController.h"
 
 @interface FoundViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -16,6 +17,11 @@
 @end
 
 @implementation FoundViewController
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,6 +64,15 @@
         cell.textLabel.text = @"火热资讯";
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == 1) {
+        NewsViewController *nVC = [[NewsViewController alloc] init];
+        nVC.title = @"火爆资讯";
+        [self.navigationController pushViewController:nVC animated:YES];
+    }
 }
 
 @end

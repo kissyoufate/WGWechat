@@ -1,6 +1,22 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - HyphenateFullSDK (3.1.5)
   - IQKeyboardManager (3.2.4)
+  - MJExtension (3.0.13)
   - MOBFoundation (2.0.8)
   - SDAutoLayout (1.53)
   - ShareSDK3 (3.4.0):
@@ -9,16 +25,20 @@ PODS:
   - ShareSDK3/ShareSDKPlatforms/QQ (3.4.0)
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.4.0)
   - ShareSDK3/ShareSDKPlatforms/WeChat (3.4.0)
+  - YZDisplayViewController (1.0.6)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
   - HyphenateFullSDK (from `https://github.com/easemob/hyphenate-full-cocoapods.git`)
   - IQKeyboardManager (~> 3.2.4)
+  - MJExtension (~> 3.0.13)
   - MOBFoundation
   - SDAutoLayout (~> 1.31)
   - ShareSDK3
   - ShareSDK3/ShareSDKPlatforms/QQ
   - ShareSDK3/ShareSDKPlatforms/SinaWeibo
   - ShareSDK3/ShareSDKPlatforms/WeChat
+  - YZDisplayViewController (~> 1.0.6)
 
 EXTERNAL SOURCES:
   HyphenateFullSDK:
@@ -30,12 +50,15 @@ CHECKOUT OPTIONS:
     :git: https://github.com/easemob/hyphenate-full-cocoapods.git
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   HyphenateFullSDK: 536f76eeb0914dba766b1d5d30dee083f0805da2
   IQKeyboardManager: 555b1231fefafb21b19278d7cca72986a27b748b
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MOBFoundation: 6f2006b941bd4002e2689a638d04c6b535c4cc64
   SDAutoLayout: ea6e2ae9fbb438aa2feb0c4363dba9297e98638a
   ShareSDK3: df89140111729eae7a2bf06688372af969322a37
+  YZDisplayViewController: 621f737a9aa3dfbc95a901e89e5e7c4b2ea6ef79
 
-PODFILE CHECKSUM: ae88621fe2fd6f0f4232bcf940b727b1c4d7f2d4
+PODFILE CHECKSUM: ee549dc056ad52dc470e69c7dde3cd04abd21078
 
 COCOAPODS: 1.0.1
