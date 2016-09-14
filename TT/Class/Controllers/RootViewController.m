@@ -81,6 +81,8 @@
     notification.fireDate = fireDate;
     // 时区
     notification.timeZone = [NSTimeZone defaultTimeZone];
+    //重复次数
+    notification.repeatInterval = 0;
     // 通知内容
     notification.alertBody =  @"您收到了一条新的消息";
     notification.applicationIconBadgeNumber = 1;
