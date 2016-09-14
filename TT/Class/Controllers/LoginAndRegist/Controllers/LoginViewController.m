@@ -37,14 +37,28 @@
     if (![QQApiInterface isQQInstalled]) {
         _QQlogin.hidden = YES;
     }
+
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"account"] && [[NSUserDefaults standardUserDefaults] objectForKey:@"password"]) {
+        _account.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"account"];
+        _password.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    }
 }
 
 - (IBAction)login:(id)sender {
     [MBProgressHUD showMessag:@"登录中" toView:self.view];
     [[EMClient sharedClient] loginWithUsername:_account.text password:_password.text completion:^(NSString *aUsername, EMError *aError) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        RootViewController *rvc = [[RootViewController alloc] init];
-        [UIApplication sharedApplication].keyWindow.rootViewController = rvc;
+        if (!aError) {
+
+            [[NSUserDefaults standardUserDefaults] setObject:_account.text forKey:@"account"];
+            [[NSUserDefaults standardUserDefaults] setObject:_password.text forKey:@"password"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+
+            RootViewController *rvc = [[RootViewController alloc] init];
+            [UIApplication sharedApplication].keyWindow.rootViewController = rvc;
+        }else{
+            [MBProgressHUD showError:[NSString stringWithFormat:@"%@",aError] toView:self.view];
+        }
     }];
 }
 

@@ -1939,6 +1939,7 @@
 			baseConfigurationReference = 8A5433F854D03B9DC8326121 /* Pods-TT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TT/EaseUI-Prefix.pch";
 				INFOPLIST_FILE = TT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1948,7 +1949,7 @@
 					"$(PROJECT_DIR)/TT/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/TT/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.tt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.TT.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1958,6 +1959,7 @@
 			baseConfigurationReference = 167D86DE2480F4FA63C9753E /* Pods-TT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/TT/EaseUI-Prefix.pch";
 				INFOPLIST_FILE = TT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1967,7 +1969,7 @@
 					"$(PROJECT_DIR)/TT/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrnb",
 					"$(PROJECT_DIR)/TT/EaseUI/EMUIKit/3rdparty/DeviceHelper/VoiceConvert/opencore-amrwb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.tt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wanggang.TT.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

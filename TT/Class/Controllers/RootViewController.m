@@ -66,6 +66,31 @@
 #pragma mark - EMChatManagerDelegate 收到消息相关的bage提示
 - (void)messagesDidReceive:(NSArray *)aMessages{
     [self getUnreadMessageCount];
+
+    UIApplication *app = [UIApplication sharedApplication];
+    if (app.applicationState == UIApplicationStateBackground) {
+        //当程序在后台最小化的时候就收到此本地通知
+        [self sendLocal];
+    }
+}
+
+- (void)sendLocal{
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    // 设置触发通知的时间
+    NSDate *fireDate = [NSDate date];
+    notification.fireDate = fireDate;
+    // 时区
+    notification.timeZone = [NSTimeZone defaultTimeZone];
+    // 通知内容
+    notification.alertBody =  @"您收到了一条新的消息";
+    notification.applicationIconBadgeNumber = 1;
+    // 通知被触发时播放的声音
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    // 通知参数
+    NSDictionary *userDict = [NSDictionary dictionaryWithObject:@"一个最帅的程序员" forKey:@"key"];
+    notification.userInfo = userDict;
+
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 - (void)getUnreadMessageCount{
