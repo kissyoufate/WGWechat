@@ -1430,6 +1430,10 @@
     [self.chatToolbar endEditing:YES];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:KNOTIFICATION_CALL object:@{@"chatter":self.conversation.conversationId, @"type":[NSNumber numberWithInt:1]}];
+
+    [[EMClient sharedClient].callManager startVideoCall:self.conversation.conversationId completion:^(EMCallSession *aCallSession, EMError *aError) {
+        //开始视频通话
+    }];
 }
 
 #pragma mark - EMLocationViewDelegate

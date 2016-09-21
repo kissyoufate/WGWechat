@@ -30,10 +30,10 @@
     searchVC.searchResultsUpdater = self;
     //搜索时，背景变暗色
     searchVC.dimsBackgroundDuringPresentation = NO;
-    //搜索时，背景变模糊
+//    //搜索时，背景变模糊
     searchVC.obscuresBackgroundDuringPresentation = NO;
-    //隐藏导航栏
-    searchVC.hidesNavigationBarDuringPresentation = NO;
+//    //隐藏导航栏
+//    searchVC.hidesNavigationBarDuringPresentation = NO;
     searchVC.searchBar.frame = CGRectMake(0, 0, kView_W, 44.0);
     //searchBar 取消按钮颜色
     searchVC.searchBar.tintColor = WGColor(85, 85, 85);
@@ -46,13 +46,13 @@
         }
     }
 
-    [self.view addSubview:searchVC.searchBar];
-
-    myTB = [[UITableView alloc] initWithFrame:CGRectMake(0, 44, kView_W, kView_H - 44) style:UITableViewStylePlain];
+    myTB = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kView_W, kView_H) style:UITableViewStylePlain];
     myTB.delegate = self;
     myTB.dataSource = self;
     [myTB setTableFooterView:[UIView new]];
     [self.view addSubview:myTB];
+
+    myTB.tableHeaderView = searchVC.searchBar;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -70,11 +70,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *str = cell.textLabel.text;
+    if ([str isEqualToString:@""]) {
+        return;
+    }
     [self easeAddFriend];
 }
 
 - (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
     [myTB reloadData];
+}
+
+- (void)willPresentSearchController:(UISearchController *)searchController{
+    myTB.frame = CGRectMake(0, 44, kView_W, kView_H);
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController{
+    myTB.frame = CGRectMake(0, 0, kView_W, kView_H);
 }
 
 #pragma mark - 添加好友方法

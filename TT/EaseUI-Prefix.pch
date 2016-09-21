@@ -25,6 +25,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import <MJExtension/MJExtension.h>
 #import "MJRefresh.h"
+#import <EMSDKFull.h>
 
 
 //shareSDK

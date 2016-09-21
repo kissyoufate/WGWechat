@@ -19,6 +19,9 @@
 
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor whiteColor];
+
+    //手势返回
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
 @end
