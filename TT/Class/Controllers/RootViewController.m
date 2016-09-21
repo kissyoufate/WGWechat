@@ -16,6 +16,8 @@
 @interface RootViewController () <EMContactManagerDelegate,EMChatManagerDelegate,EMCallManagerDelegate>
 {
     EMCallSession *ase;
+
+    NSString * _audioCategory;
 }
 
 @end
@@ -40,7 +42,7 @@
     //收到消息的代理
     [[EMClient sharedClient].chatManager addDelegate:self];
     //收到即时视频/语音的代理
-    [[EMClient sharedClient].callManager addDelegate:self];
+    [[EMClient sharedClient].callManager addDelegate:self delegateQueue:nil];
     //主动调用获取未读的消息,添加角标
     [self getUnreadMessageCount];
 }
@@ -71,31 +73,37 @@
 #pragma mark - EMCallManagerDelegate 收到即时视频,语音相关
 - (void)callDidReceive:(EMCallSession *)aSession{
     NSLog(@"我收到了一个即时的视频邀请");
-    //默认逻辑为接受
-    [[EMClient sharedClient].callManager answerIncomingCall:aSession.sessionId];
-}
-
-- (void)callDidConnect:(EMCallSession *)aSession{
+    //⬇️创建通话UI
     ase = aSession;
-    [MBProgressHUD showSuccess:@"通讯建立完成" toView:self.view];
-
-    aSession.videoBitrate = 150;
     //1.对方窗口
-    aSession.remoteVideoView = [[EMCallRemoteView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    ase.remoteVideoView = [[EMCallRemoteView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height - 40)];
     [self.view addSubview:aSession.remoteVideoView];
-
     //2.自己窗口
     CGFloat width  = 150;
     CGFloat height = 200;
-    aSession.localVideoView = [[EMCallLocalView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 150, self.view.frame.size.height - 200, width, height)];
-    [self.view addSubview:aSession.localVideoView];
-
+    ase.localVideoView = [[EMCallLocalView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 150, self.view.frame.size.height - 200, width, height)];
+    [self.view addSubview:ase.localVideoView];
+    //取消按钮
     UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
     b.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
     b.backgroundColor = [UIColor redColor];
     [b setTitle:@"结束通话" forState:UIControlStateNormal];
     [b addTarget:self action:@selector(endCallLLL:) forControlEvents:UIControlEventTouchUpInside];
-    [aSession.remoteVideoView addSubview:b];
+    [self.view addSubview:b];
+
+    [[EMClient sharedClient].callManager pauseVideoWithSession:ase.sessionId error:nil];
+
+    [[EMClient sharedClient].callManager answerIncomingCall:ase.sessionId];
+
+    [[EMClient sharedClient].callManager resumeVoiceWithSession:ase.sessionId error:nil];
+}
+
+- (void)callStateDidChange:(EMCallSession *)aSession type:(EMCallStreamingStatus)aType{
+
+}
+
+- (void)callDidConnect:(EMCallSession *)aSession{
+
 }
 
 - (void)endCallLLL:(UIButton *)b{
@@ -195,5 +203,4 @@
 - (void)friendRequestDidDeclineByUser:(NSString *)aUsername{
     [MBProgressHUD showSuccess:[NSString stringWithFormat:@"%@ 拒绝了您的好友申请😀",aUsername] toView:self.view];
 }
-
 @end

@@ -567,6 +567,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3221B8211D92736500E58162 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
 		325CB89F1D82609A00CC4416 = {
 			isa = PBXGroup;
 			children = (
@@ -1297,6 +1304,7 @@
 			children = (
 				325CBACF1D826BE100CC4416 /* RootViewController.h */,
 				325CBAD01D826BE100CC4416 /* RootViewController.m */,
+				3221B8211D92736500E58162 /* Call */,
 				326784061D864D0B007197C5 /* AddFriend */,
 				325CBAF31D82889900CC4416 /* LoginAndRegist */,
 				325CBAEC1D82858B00CC4416 /* Found */,

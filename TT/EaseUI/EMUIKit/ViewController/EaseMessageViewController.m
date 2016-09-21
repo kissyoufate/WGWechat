@@ -25,7 +25,6 @@
 #import "EaseCustomMessageCell.h"
 #import "UIImage+EMGIF.h"
 #import "EaseLocalDefine.h"
-#import "EaseSDKHelper.h"
 
 #define KHintAdjustY    50
 
@@ -56,6 +55,8 @@
 @property (nonatomic) BOOL isKicked;
 @property (nonatomic) BOOL isPlayingAudio;
 @property (nonatomic, strong) NSMutableArray *atTargets;
+
+@property (nonatomic,strong)EMCallSession *ase;
 
 @end
 
@@ -1433,7 +1434,36 @@
 
     [[EMClient sharedClient].callManager startVideoCall:self.conversation.conversationId completion:^(EMCallSession *aCallSession, EMError *aError) {
         //开始视频通话
+        _ase = aCallSession;
+        //1.对方窗口
+        aCallSession.remoteVideoView = [[EMCallRemoteView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [self.view addSubview:aCallSession.remoteVideoView];
+        //2.自己窗口
+        CGFloat width  = 150;
+        CGFloat height = 200;
+        aCallSession.localVideoView = [[EMCallLocalView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 150, self.view.frame.size.height - 200, width, height)];
+        [self.view addSubview:aCallSession.localVideoView];
+        //取消按钮
+        UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
+        b.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
+        b.backgroundColor = [UIColor redColor];
+        [b setTitle:@"结束通话" forState:UIControlStateNormal];
+        [b addTarget:self action:@selector(endCallLLL:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:b];
     }];
+
+}
+
+- (void)endCallLLL:(UIButton *)b{
+    [[EMClient sharedClient].callManager endCall:_ase.sessionId reason:EMCallEndReasonHangup];
+
+    [_ase.remoteVideoView removeFromSuperview];
+    [_ase.localVideoView removeFromSuperview];
+    _ase.remoteVideoView  = nil;
+    _ase.localVideoView = nil;
+    _ase = nil;
+
+    [b removeFromSuperview];
 }
 
 #pragma mark - EMLocationViewDelegate
