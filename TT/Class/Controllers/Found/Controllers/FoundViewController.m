@@ -8,6 +8,7 @@
 
 #import "FoundViewController.h"
 #import "NewsViewController.h"
+#import "FriendCircleController.h"
 
 @interface FoundViewController () <UITableViewDataSource,UITableViewDelegate>
 {
@@ -72,6 +73,10 @@
         NewsViewController *nVC = [[NewsViewController alloc] init];
         nVC.title = @"火爆资讯";
         [self.navigationController pushViewController:nVC animated:YES];
+    }else if (indexPath.section == 0){
+        FriendCircleController *fVC = [[FriendCircleController alloc] init];
+        fVC.title = @"朋友圈";
+        [self.navigationController pushViewController:fVC animated:YES];
     }
 }
 

@@ -192,6 +192,10 @@
 		325CBB051D8290E200CC4416 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325CBB031D8290E200CC4416 /* RegistViewController.m */; };
 		325CBB061D8290E200CC4416 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CBB041D8290E200CC4416 /* RegistViewController.xib */; };
 		3267840C1D864D1E007197C5 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3267840B1D864D1E007197C5 /* AddFriendViewController.m */; };
+		32C636251DA89E6D007B69EC /* FriendCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C636241DA89E6D007B69EC /* FriendCircleController.m */; };
+		32C6362C1DA8A60B007B69EC /* FriendCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6362B1DA8A60B007B69EC /* FriendCircleModel.m */; };
+		32C6362F1DA8BCE9007B69EC /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6362E1DA8BCE9007B69EC /* FriendCircleCell.m */; };
+		32C6366B1DA8E2BC007B69EC /* FriendImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6366A1DA8E2BC007B69EC /* FriendImagesView.m */; };
 		32C991161D87CB8F00799ABC /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C991151D87CB8F00799ABC /* NewsViewController.m */; };
 		32C991191D87CC6500799ABC /* NewsCategaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C991181D87CC6500799ABC /* NewsCategaryViewController.m */; };
 		32C9911D1D87D2CD00799ABC /* NewsCategaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C9911B1D87D2CD00799ABC /* NewsCategaryCell.m */; };
@@ -651,6 +655,14 @@
 		325CBB041D8290E200CC4416 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		3267840A1D864D1E007197C5 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		3267840B1D864D1E007197C5 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
+		32C636231DA89E6D007B69EC /* FriendCircleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleController.h; sourceTree = "<group>"; };
+		32C636241DA89E6D007B69EC /* FriendCircleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleController.m; sourceTree = "<group>"; };
+		32C6362A1DA8A60B007B69EC /* FriendCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleModel.h; sourceTree = "<group>"; };
+		32C6362B1DA8A60B007B69EC /* FriendCircleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleModel.m; sourceTree = "<group>"; };
+		32C6362D1DA8BCE9007B69EC /* FriendCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleCell.h; sourceTree = "<group>"; };
+		32C6362E1DA8BCE9007B69EC /* FriendCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleCell.m; sourceTree = "<group>"; };
+		32C636691DA8E2BC007B69EC /* FriendImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendImagesView.h; sourceTree = "<group>"; };
+		32C6366A1DA8E2BC007B69EC /* FriendImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendImagesView.m; sourceTree = "<group>"; };
 		32C991141D87CB8F00799ABC /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		32C991151D87CB8F00799ABC /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		32C991171D87CC6500799ABC /* NewsCategaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCategaryViewController.h; sourceTree = "<group>"; };
@@ -1659,6 +1671,7 @@
 		325CBAED1D82858B00CC4416 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				32C6361F1DA89E1F007B69EC /* FriendCircle */,
 				325CBAF01D82859600CC4416 /* FoundViewController.h */,
 				325CBAF11D82859600CC4416 /* FoundViewController.m */,
 				32C991141D87CB8F00799ABC /* NewsViewController.h */,
@@ -1756,6 +1769,45 @@
 		326784091D864D0B007197C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32C6361F1DA89E1F007B69EC /* FriendCircle */ = {
+			isa = PBXGroup;
+			children = (
+				32C636201DA89E1F007B69EC /* Controllers */,
+				32C636211DA89E1F007B69EC /* Models */,
+				32C636221DA89E1F007B69EC /* Views */,
+			);
+			path = FriendCircle;
+			sourceTree = "<group>";
+		};
+		32C636201DA89E1F007B69EC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32C636231DA89E6D007B69EC /* FriendCircleController.h */,
+				32C636241DA89E6D007B69EC /* FriendCircleController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		32C636211DA89E1F007B69EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				32C6362A1DA8A60B007B69EC /* FriendCircleModel.h */,
+				32C6362B1DA8A60B007B69EC /* FriendCircleModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		32C636221DA89E1F007B69EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32C6362D1DA8BCE9007B69EC /* FriendCircleCell.h */,
+				32C6362E1DA8BCE9007B69EC /* FriendCircleCell.m */,
+				32C636691DA8E2BC007B69EC /* FriendImagesView.h */,
+				32C6366A1DA8E2BC007B69EC /* FriendImagesView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2353,6 +2405,7 @@
 				325CBA461D82681300CC4416 /* EaseUserCell.m in Sources */,
 				325CBA381D82681300CC4416 /* EaseChineseToPinyin.m in Sources */,
 				325CBA231D82681300CC4416 /* PSTCollectionViewCell.m in Sources */,
+				32C6362F1DA8BCE9007B69EC /* FriendCircleCell.m in Sources */,
 				325CB9F41D82681300CC4416 /* MBProgressHUD.m in Sources */,
 				325CBA041D82681300CC4416 /* MJRefreshConst.m in Sources */,
 				325CBA4D1D82681300CC4416 /* EaseBubbleView+Image.m in Sources */,
@@ -2361,6 +2414,8 @@
 				325CBA121D82681300CC4416 /* EMSDWebImageCompat.m in Sources */,
 				325CBA571D82681300CC4416 /* EaseFaceView.m in Sources */,
 				325CBA0F1D82681300CC4416 /* MWZoomingScrollView.m in Sources */,
+				32C636251DA89E6D007B69EC /* FriendCircleController.m in Sources */,
+				32C6362C1DA8A60B007B69EC /* FriendCircleModel.m in Sources */,
 				325CB9EB1D82681300CC4416 /* EMCDDeviceManager+ProximitySensor.m in Sources */,
 				325CB9FB1D82681300CC4416 /* MJRefreshAutoNormalFooter.m in Sources */,
 				325CB9F01D82681300CC4416 /* EMVoiceConverter.mm in Sources */,
@@ -2387,6 +2442,7 @@
 				325CBA141D82681300CC4416 /* EMSDWebImageDownloader.m in Sources */,
 				325CBA1F1D82681300CC4416 /* UIImageView+EMWebCache.m in Sources */,
 				325CBA5B1D82681300CC4416 /* EaseConversationCell.m in Sources */,
+				32C6366B1DA8E2BC007B69EC /* FriendImagesView.m in Sources */,
 				325CBA4E1D82681300CC4416 /* EaseBubbleView+Location.m in Sources */,
 				325CB9F71D82681300CC4416 /* MJRefreshComponent.m in Sources */,
 				32C9911D1D87D2CD00799ABC /* NewsCategaryCell.m in Sources */,
