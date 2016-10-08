@@ -22,7 +22,7 @@
 #define qqID @"1105610831"
 
 
-@interface AppDelegate ()
+@interface AppDelegate () <EMCallManagerDelegate>
 
 @end
 
@@ -51,6 +51,10 @@
                                                appkey:APPKEY
                                          apnsCertName:@"TTPushBywang"
                                           otherConfig:@{kSDKConfigEnableConsoleLogger:[NSNumber numberWithBool:YES]}];
+
+
+    //收到即时视频/语音的代理
+    [[EMClient sharedClient].callManager addDelegate:self delegateQueue:nil];
 
     [self initShareSDK];
 
@@ -167,6 +171,11 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+}
+
+#pragma mark - 视频通话
+- (void)callDidReceive:(EMCallSession *)aSession{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"ReceiveCall" object:nil userInfo:@{@"aa":aSession}];
 }
 
 @end

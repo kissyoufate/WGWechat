@@ -12,10 +12,12 @@
 #import "FoundViewController.h"
 #import "MineViewController.h"
 #import "BaseNavViewController.h"
+#import "MyCallViewController.h"
 
-@interface RootViewController () <EMContactManagerDelegate,EMChatManagerDelegate,EMCallManagerDelegate>
+#import "CallViewController.h"
+
+@interface RootViewController () <EMContactManagerDelegate,EMChatManagerDelegate>
 {
-    EMCallSession *ase;
 
     NSString * _audioCategory;
 }
@@ -41,10 +43,11 @@
     [[EMClient sharedClient].contactManager addDelegate:self];
     //收到消息的代理
     [[EMClient sharedClient].chatManager addDelegate:self];
-    //收到即时视频/语音的代理
-    [[EMClient sharedClient].callManager addDelegate:self delegateQueue:nil];
     //主动调用获取未读的消息,添加角标
     [self getUnreadMessageCount];
+
+    //视频通话的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recivecall:) name:@"ReceiveCall" object:nil];
 }
 
 - (void)setAllControllers{
@@ -71,38 +74,26 @@
 }
 
 #pragma mark - EMCallManagerDelegate 收到即时视频,语音相关
+- (void)recivecall:(NSNotification *)not{
+    NSDictionary *d = not.userInfo;
+    EMCallSession *se = d[@"aa"];
+    CallViewController *call = [[CallViewController alloc] initWithSession:se isCaller:NO status:@"45646"];
+    [self presentViewController:call animated:YES completion:nil];
+}
+
+
+#if 0
 - (void)callDidReceive:(EMCallSession *)aSession{
     NSLog(@"我收到了一个即时的视频邀请");
-    //⬇️创建通话UI
-    ase = aSession;
-    //1.对方窗口
-    ase.remoteVideoView = [[EMCallRemoteView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height - 40)];
-    [self.view addSubview:aSession.remoteVideoView];
-    //2.自己窗口
-    CGFloat width  = 150;
-    CGFloat height = 200;
-    ase.localVideoView = [[EMCallLocalView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 150, self.view.frame.size.height - 200, width, height)];
-    [self.view addSubview:ase.localVideoView];
-    //取消按钮
-    UIButton *b = [UIButton buttonWithType:UIButtonTypeCustom];
-    b.frame = CGRectMake(0, 0, self.view.frame.size.width, 40);
-    b.backgroundColor = [UIColor redColor];
-    [b setTitle:@"结束通话" forState:UIControlStateNormal];
-    [b addTarget:self action:@selector(endCallLLL:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:b];
-
-    [[EMClient sharedClient].callManager pauseVideoWithSession:ase.sessionId error:nil];
-
     [[EMClient sharedClient].callManager answerIncomingCall:ase.sessionId];
-
-    [[EMClient sharedClient].callManager resumeVoiceWithSession:ase.sessionId error:nil];
 }
 
-- (void)callStateDidChange:(EMCallSession *)aSession type:(EMCallStreamingStatus)aType{
-
-}
-
+//双方都会收到
 - (void)callDidConnect:(EMCallSession *)aSession{
+    }
+
+//同意接收视频后
+- (void)callDidAccept:(EMCallSession *)aSession{
 
 }
 
@@ -124,6 +115,7 @@
     ase.localVideoView = nil;
     ase = nil;
 }
+#endif
 
 
 #pragma mark - EMChatManagerDelegate 收到消息相关的bage提示

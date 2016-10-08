@@ -27,6 +27,8 @@
 #import "MJRefresh.h"
 #import <EMSDKFull.h>
 
+#define DEMO_CALL 1
+
 
 //shareSDK
 #import <ShareSDK/ShareSDK.h>
