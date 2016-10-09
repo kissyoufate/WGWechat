@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FriendCircleModel.h"
 #import "FriendImagesView.h"
+#import "FriendsCommentsView.h"
 
 @interface FriendCircleCell : UITableViewCell
 
@@ -19,5 +20,7 @@
 @property (nonatomic,strong)UILabel *timeLabel;
 @property (nonatomic,strong)UILabel *contentLabel;
 @property (nonatomic,strong)FriendImagesView *friendPhotos;
+@property (nonatomic,strong)UILabel *goodLabel;
+@property (nonatomic,strong)FriendsCommentsView *friendsComments;
 
 @end

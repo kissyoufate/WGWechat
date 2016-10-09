@@ -192,6 +192,7 @@
 		325CBB051D8290E200CC4416 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 325CBB031D8290E200CC4416 /* RegistViewController.m */; };
 		325CBB061D8290E200CC4416 /* RegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325CBB041D8290E200CC4416 /* RegistViewController.xib */; };
 		3267840C1D864D1E007197C5 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3267840B1D864D1E007197C5 /* AddFriendViewController.m */; };
+		3297346F1DA9DA00008CF825 /* FriendsCommentsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3297346E1DA9DA00008CF825 /* FriendsCommentsView.m */; };
 		32C636251DA89E6D007B69EC /* FriendCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C636241DA89E6D007B69EC /* FriendCircleController.m */; };
 		32C6362C1DA8A60B007B69EC /* FriendCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6362B1DA8A60B007B69EC /* FriendCircleModel.m */; };
 		32C6362F1DA8BCE9007B69EC /* FriendCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32C6362E1DA8BCE9007B69EC /* FriendCircleCell.m */; };
@@ -655,6 +656,8 @@
 		325CBB041D8290E200CC4416 /* RegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistViewController.xib; sourceTree = "<group>"; };
 		3267840A1D864D1E007197C5 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
 		3267840B1D864D1E007197C5 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
+		3297346D1DA9DA00008CF825 /* FriendsCommentsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsCommentsView.h; sourceTree = "<group>"; };
+		3297346E1DA9DA00008CF825 /* FriendsCommentsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsCommentsView.m; sourceTree = "<group>"; };
 		32C636231DA89E6D007B69EC /* FriendCircleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleController.h; sourceTree = "<group>"; };
 		32C636241DA89E6D007B69EC /* FriendCircleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendCircleController.m; sourceTree = "<group>"; };
 		32C6362A1DA8A60B007B69EC /* FriendCircleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendCircleModel.h; sourceTree = "<group>"; };
@@ -1808,6 +1811,8 @@
 				32C6362E1DA8BCE9007B69EC /* FriendCircleCell.m */,
 				32C636691DA8E2BC007B69EC /* FriendImagesView.h */,
 				32C6366A1DA8E2BC007B69EC /* FriendImagesView.m */,
+				3297346D1DA9DA00008CF825 /* FriendsCommentsView.h */,
+				3297346E1DA9DA00008CF825 /* FriendsCommentsView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2400,6 +2405,7 @@
 				325CBA411D82681300CC4416 /* EaseLocationViewController.m in Sources */,
 				325CBA471D82681300CC4416 /* EaseBaseMessageCell.m in Sources */,
 				325CBA521D82681300CC4416 /* EaseBubbleView.m in Sources */,
+				3297346F1DA9DA00008CF825 /* FriendsCommentsView.m in Sources */,
 				325CBA3F1D82681300CC4416 /* FixFopen.c in Sources */,
 				325CBA241D82681300CC4416 /* PSTCollectionViewController.m in Sources */,
 				325CBA461D82681300CC4416 /* EaseUserCell.m in Sources */,
